@@ -1,4 +1,4 @@
-Table-Seach-2013
+Table Seach 2013
 ================
 
 Example of how to search a UITableView in iOS 5 and iOS 6
