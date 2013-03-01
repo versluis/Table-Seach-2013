@@ -30,6 +30,7 @@
     self.searchResults = [[NSMutableArray alloc]init];
     
     // needed for iOS 5
+    // in iOS 6 we can use the UISearchDisplayController in the storyboard and don't need this setup
     self.controller = [[UISearchDisplayController alloc]initWithSearchBar:self.searchBar contentsController:self];
     self.controller.searchResultsDataSource = self;
     self.controller.searchResultsDelegate = self;

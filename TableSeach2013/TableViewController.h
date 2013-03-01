@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 // needed for iOS 5
+// in iOS 6 the UISearchDisplayController in the storyboard needs no additional setup
 @property (strong, nonatomic) UISearchDisplayController *controller;
 
 @end
