@@ -17,7 +17,7 @@
 		D2EEB45516E11C160074DEFF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EEB45416E11C160074DEFF /* Default@2x.png */; };
 		D2EEB45716E11C160074DEFF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EEB45616E11C160074DEFF /* Default-568h@2x.png */; };
 		D2EEB45A16E11C160074DEFF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EEB45816E11C160074DEFF /* MainStoryboard.storyboard */; };
-		D2EEB45D16E11C160074DEFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EEB45C16E11C160074DEFF /* ViewController.m */; };
+		D2EEB46516E11C570074DEFF /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EEB46416E11C570074DEFF /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +35,8 @@
 		D2EEB45416E11C160074DEFF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D2EEB45616E11C160074DEFF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D2EEB45916E11C160074DEFF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		D2EEB45B16E11C160074DEFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2EEB45C16E11C160074DEFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D2EEB46316E11C570074DEFF /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		D2EEB46416E11C570074DEFF /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 				D2EEB44F16E11C160074DEFF /* AppDelegate.h */,
 				D2EEB45016E11C160074DEFF /* AppDelegate.m */,
 				D2EEB45816E11C160074DEFF /* MainStoryboard.storyboard */,
-				D2EEB45B16E11C160074DEFF /* ViewController.h */,
-				D2EEB45C16E11C160074DEFF /* ViewController.m */,
+				D2EEB46316E11C570074DEFF /* TableViewController.h */,
+				D2EEB46416E11C570074DEFF /* TableViewController.m */,
 				D2EEB44716E11C160074DEFF /* Supporting Files */,
 			);
 			path = TableSeach2013;
@@ -175,7 +175,7 @@
 			files = (
 				D2EEB44D16E11C160074DEFF /* main.m in Sources */,
 				D2EEB45116E11C160074DEFF /* AppDelegate.m in Sources */,
-				D2EEB45D16E11C160074DEFF /* ViewController.m in Sources */,
+				D2EEB46516E11C570074DEFF /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +263,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableSeach2013/TableSeach2013-Prefix.pch";
 				INFOPLIST_FILE = "TableSeach2013/TableSeach2013-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -274,6 +275,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableSeach2013/TableSeach2013-Prefix.pch";
 				INFOPLIST_FILE = "TableSeach2013/TableSeach2013-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
