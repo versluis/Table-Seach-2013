@@ -145,11 +145,15 @@
 
 - (IBAction)displaySearchBar:(id)sender {
     
+    // makes the search bar visible
     [self.searchBar becomeFirstResponder];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     
+    // hide the search bar when users are finished
+    // we could implement the same code as in viewDidAppear
+    // or even easier: just call that method
     [self viewDidAppear:YES];
     
 }
