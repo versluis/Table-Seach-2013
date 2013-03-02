@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // in itializes our sample array
     [self createData];
     self.searchResults = [[NSMutableArray alloc]init];
     
@@ -35,6 +37,15 @@
     self.controller.searchResultsDataSource = self;
     self.controller.searchResultsDelegate = self;
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    // scroll the search bar off-screen
+    CGRect newBounds = self.tableView.bounds;
+    newBounds.origin.y = newBounds.origin.y + self.searchBar.bounds.size.height;
+    self.tableView.bounds = newBounds;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,6 +140,22 @@
     [self filterData];
     
 }
+
+
+
+- (IBAction)displaySearchBar:(id)sender {
+    
+    [self.searchBar becomeFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    
+    [self viewDidAppear:YES];
+    
+}
+
+
+
 
 
 

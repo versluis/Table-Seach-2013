@@ -18,4 +18,6 @@
 // in iOS 6 the UISearchDisplayController in the storyboard needs no additional setup
 @property (strong, nonatomic) UISearchDisplayController *controller;
 
+- (IBAction)displaySearchBar:(id)sender;
+
 @end

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Table View Controller - Table Search 2013-->
         <scene sceneID="O3c-xf-lTV">
             <objects>
                 <tableViewController id="sbb-b8-m2h" customClass="TableViewController" sceneMemberID="viewController">
@@ -16,6 +16,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="sbb-b8-m2h" id="TjB-RB-Lzp"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="clT-lw-6ug">
@@ -33,7 +36,13 @@
                             <outlet property="delegate" destination="sbb-b8-m2h" id="lYn-Yg-ngN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="a8q-t7-x3M"/>
+                    <navigationItem key="navigationItem" title="Table Search 2013" id="a8q-t7-x3M">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="U5d-Ip-YMq">
+                            <connections>
+                                <action selector="displaySearchBar:" destination="sbb-b8-m2h" id="lZd-kB-edu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="P9z-wE-Y3Z" id="1fB-Ae-Izj"/>
                         <outlet property="searchDisplayController" destination="H0d-b9-EKR" id="kb3-i3-A3i"/>
@@ -94,6 +103,15 @@
             <point key="canvasLocation" x="176" y="46"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="TableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="displaySearchBar:"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
