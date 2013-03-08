@@ -39,7 +39,7 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
     // scroll the search bar off-screen
     CGRect newBounds = self.tableView.bounds;
@@ -154,7 +154,7 @@
     // hide the search bar when users are finished
     // we could implement the same code as in viewDidAppear
     // or even easier: just call that method
-    [self viewDidAppear:YES];
+    [self viewWillAppear:YES];
     
 }
 
