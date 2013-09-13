@@ -37,26 +37,14 @@
     self.controller.searchResultsDataSource = self;
     self.controller.searchResultsDelegate = self;
     
-    // let's not show the search button on iOS 7
-    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
-        [self.navigationItem setRightBarButtonItems:nil animated:YES];
-    }
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     // scroll the search bar off-screen
-    
-    // only do this on iOS 5 and 6, not on iOS 7
-    // (becasue the cancel button would never work)
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        
-        CGRect newBounds = self.tableView.bounds;
-        newBounds.origin.y = newBounds.origin.y + self.searchBar.bounds.size.height;
-        self.tableView.bounds = newBounds;
-    }
-    
+    CGRect newBounds = self.tableView.bounds;
+    newBounds.origin.y = newBounds.origin.y + self.searchBar.bounds.size.height;
+    self.tableView.bounds = newBounds;
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +67,7 @@
         // Return the number of rows in the section.
         return self.allData.count;
     } else {
-    
+        
         [self filterData];
         return self.searchResults.count;
     }
@@ -96,7 +84,7 @@
     }
     
     if (tableView == self.tableView) {
-       
+        
         cell.textLabel.text = [self.allData objectAtIndex:indexPath.row];
         
     } else {
@@ -157,6 +145,23 @@
 - (IBAction)displaySearchBar:(id)sender {
     
     // makes the search bar visible
+    // no longer works in iOS 7
+    // [self.searchBar becomeFirstResponder];
+    
+    // SUGGESTED BY JANOS HOMOKI
+    // makes the search bar visible
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    
+    NSTimeInterval delay;
+    if (self.tableView.contentOffset.y >1000) delay = 0.4;
+    else delay = 0.1;
+    [self performSelector:@selector(activateSearch) withObject:nil afterDelay:delay];
+    
+}
+
+- (void)activateSearch
+{
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [self.searchBar becomeFirstResponder];
     
 }
@@ -168,14 +173,7 @@
     // or even easier: just call that method
     [self viewWillAppear:YES];
     
-    // this method is no longer called on iOS 7
-    // instead the user needs to click the "grey bit" on the screen rather than the cancel button
-    // perhaps we should just hide the cancel button if we're on iOS 7
-    
 }
-
-
-
 
 
 
