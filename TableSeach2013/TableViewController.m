@@ -23,8 +23,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     // in itializes our sample array
@@ -47,22 +46,28 @@
     self.tableView.bounds = newBounds;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)viewDidUnload {
+    
+    // no longer necessary as of 2013
+    [self setSearchBar:nil];
+    [self setSearchBar:nil];
+    [super viewDidUnload];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView == self.tableView) {
         // Return the number of rows in the section.
         return self.allData.count;
@@ -73,8 +78,7 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -98,8 +102,7 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.tableView) {
         self.title = [self.allData objectAtIndex:indexPath.row];
     } else {
@@ -107,6 +110,8 @@
     }
 }
 
+
+#pragma mark - Data Creation
 
 - (void)createData {
     
@@ -118,11 +123,8 @@
     
 }
 
-- (void)viewDidUnload {
-    [self setSearchBar:nil];
-    [self setSearchBar:nil];
-    [super viewDidUnload];
-}
+
+#pragma mark - Search
 
 - (void)filterData {
     
@@ -139,8 +141,6 @@
     [self filterData];
     
 }
-
-
 
 - (IBAction)displaySearchBar:(id)sender {
     
@@ -159,8 +159,7 @@
     
 }
 
-- (void)activateSearch
-{
+- (void)activateSearch {
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [self.searchBar becomeFirstResponder];
     
@@ -174,7 +173,6 @@
     [self viewWillAppear:YES];
     
 }
-
 
 
 
