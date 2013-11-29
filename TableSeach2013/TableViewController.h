@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewController : UITableViewController <UISearchBarDelegate>
+@interface TableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, strong) NSArray *allData;
 @property (nonatomic, strong) NSMutableArray *searchResults;

@@ -174,6 +174,10 @@
     
 }
 
-
+// this method is never called
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller {
+    
+    NSLog(@"Search Controller did end search");
+}
 
 @end
